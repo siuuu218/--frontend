@@ -1,9 +1,10 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8000/api/v1';
+// 환경변수에서 API URL 가져오기
+const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
 const api = axios.create({
-    baseURL: 'http://localhost:8000',
+    baseURL: API_BASE_URL,  // localhost 대신 환경변수 사용
     headers: {
         'Content-Type': 'application/json',
     }
