@@ -7,7 +7,8 @@ const api = axios.create({
     baseURL: API_BASE_URL,  // localhost 대신 환경변수 사용
     headers: {
         'Content-Type': 'application/json',
-    }
+    },
+    withCredentials: false,  // CORS 관련 설정
 });
 
 export const ragService = {
